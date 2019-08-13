@@ -51,12 +51,12 @@ class _HomeState extends State<Home> {
                     child: new Row(
 
                       children: <Widget>[
-                        new Expanded(child: new Text("title",style: new TextStyle(color: Colors.white,fontSize: 30.0,fontFamily: 'Arvo'),)),
-                        new Text('Avarage',style: new TextStyle(color: Colors.white,fontSize: 20.0,fontFamily: 'Arvo'),)
+                        new Expanded(child: new Text("Far from home",style: new TextStyle(color: Colors.white,fontSize: 30.0,fontFamily: 'Arvo',fontWeight: FontWeight.bold),)),
+                        new Text('7.8/10',style: new TextStyle(color: Colors.white,fontSize: 20.0,fontFamily: 'Arvo'),)
                       ],
                     ),
                   ),
-                  new Text("overview",style: new TextStyle(color: Colors.white,fontFamily: 'Arvo')),
+                  new Text("Spider man far from home far from home far from home far from home",style: new TextStyle(color: Colors.white,fontFamily: 'Arvo')),
                   new Padding(padding: const EdgeInsets.all(10.0)),
                   new Row(
                     children: <Widget>[
@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
                               width: 150.0,
                               height: 60.0,
                               alignment: Alignment.center,
-                              child: new Text('Rate Movie',style: new TextStyle(color: Colors.white,fontFamily: 'Arvo',fontSize: 20.0),),
+                              child: new Text('Download',style: new TextStyle(color: Colors.white,fontFamily: 'Arvo',fontSize: 20.0),),
                               decoration: new BoxDecoration(
                                 borderRadius: new BorderRadius.circular(10.0),
                                 color:  Colors.deepPurpleAccent
