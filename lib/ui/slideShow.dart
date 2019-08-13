@@ -13,9 +13,45 @@ class _SlideShowState extends State<SlideShow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: CarouselSlider(
-            height: 400.0,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0.0, 
+        title: Text("Popular movies",
+                  style: TextStyle(
+                    fontFamily: 'Arvo',
+                    fontSize: 34,
+                    color: Colors.deepPurpleAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+        actions: <Widget>[
+          Icon(Icons.search,
+            color: Colors.deepPurpleAccent,
+            size: 34,
+          ),
+        ],
+      ),
+      body: Column(
+        children: <Widget>[
+          //  Padding(
+          //    padding: const EdgeInsets.only(top:30.0),
+          //    child: Row(
+          //      children: <Widget>[
+          //        Text("Popular movies",
+          //         style: TextStyle(
+          //           fontFamily: 'Arvo',
+          //           fontSize: 34,
+          //           color: Colors.deepPurpleAccent,
+          //           fontWeight: FontWeight.bold,
+          //         ),
+          //       ),
+          //       Icon(Icons.search),
+          //      ],
+          //    )
+          //  ),
+          Padding(padding: EdgeInsets.only(top: 20),),
+        CarouselSlider(
+            height: 300.0,
             autoPlay: true,
             aspectRatio: 2.0,
             viewportFraction: 0.8,
@@ -37,6 +73,9 @@ class _SlideShowState extends State<SlideShow> {
               );
             }).toList(),
           )
+
+        ],
+        
       ),
     );
   }
