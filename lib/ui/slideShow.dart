@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:uhdmovies/ui/home.dart';
 import 'package:uhdmovies/ui/search.dart';
 
@@ -23,10 +22,32 @@ class _SlideShowState extends State<SlideShow> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            ListTile(
+              title: Text("All"),
+              onTap: (){},
+            ),
+            ListTile(
+              title: Text("New movies"),
+              onTap: (){},
+            ),
+            ListTile(
+              title: Text("Action movies"),
+              onTap: (){},
+            ),
+            ListTile(
+              title: Text("Triller movies"),
+              onTap: (){},
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.black,
         elevation: 0.0, 
-        title: Text("Popular movies",
+        title: Text("New movies",
                   style: TextStyle(
                     fontFamily: 'Arvo',
                     fontSize: 34,
@@ -75,7 +96,7 @@ class _SlideShowState extends State<SlideShow> {
           ),
            Padding(
              padding: const EdgeInsets.only(top:10.0),
-             child:Text("New movies",
+             child:Text("Popular movies",
                 style: TextStyle(
                   fontFamily: 'Arvo',
                   fontSize: 24,
@@ -88,20 +109,14 @@ class _SlideShowState extends State<SlideShow> {
           Container(
             height: 270,
             child: GridView.count(
-              // crossAxisSpacing: 10.0,
-              // shrinkWrap: true,
               crossAxisCount: 2,
-              // Generate 100 widgets that display their index in the List.
               children: List.generate(4, (index) {      //should return widget list
                 return Padding(
                   padding: EdgeInsets.all(10),
                   child: Container(
-                    // height: 250,
                     child: Center(
                       child: Image.network('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg',
                               fit: BoxFit.cover,
-                              // height: 250,
-                              // width: 250,
                               ),
                     ),       
                   ),

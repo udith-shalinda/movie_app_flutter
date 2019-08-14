@@ -68,7 +68,7 @@ class _SearchResultState extends State<SearchResult> {
                     child: GridView.count(
                       // crossAxisSpacing: 10.0,
                       // shrinkWrap: true,
-                      crossAxisCount: 3,
+                      crossAxisCount: 2,
                       // Generate 100 widgets that display their index in the List.
                       children: List.generate(8, (index) {      //should return widget list
                         return Padding(
