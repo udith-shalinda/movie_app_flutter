@@ -66,20 +66,14 @@ class _SearchResultState extends State<SearchResult> {
                   Container(
                     height: MediaQuery.of(context).size.height-200,
                     child: GridView.count(
-                      // crossAxisSpacing: 10.0,
-                      // shrinkWrap: true,
                       crossAxisCount: 2,
-                      // Generate 100 widgets that display their index in the List.
                       children: List.generate(8, (index) {      //should return widget list
                         return Padding(
                           padding: EdgeInsets.all(10),
                           child: Container(
-                            // height: 250,
                             child: Center(
-                              child: Image.network('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg',
+                              child: Image.network('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg',
                                       fit: BoxFit.cover,
-                                      // height: 250,
-                                      // width: 250,
                                     ),
                             ),       
                           ),

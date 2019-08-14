@@ -114,11 +114,9 @@ class _SlideShowState extends State<SlideShow> {
                 return Padding(
                   padding: EdgeInsets.all(10),
                   child: Container(
-                    child: Center(
-                      child: Image.network('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg',
-                              fit: BoxFit.cover,
-                              ),
-                    ),       
+                      child: Image.network('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg',
+                              fit: BoxFit.fitHeight,
+                              ), 
                   ),
                 );
               }),
