@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 
 class Home extends StatefulWidget {
+  String image_link;
+  Home({Key  key, @required this.image_link}):super(key:key);
   @override
   _HomeState createState() => _HomeState();
 }
@@ -17,7 +19,7 @@ class _HomeState extends State<Home> {
       body: Stack(
         fit: StackFit.expand,
           children: <Widget>[
-            Image.network('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg',
+            Image.network(widget.image_link,
             fit: BoxFit.cover,),
             BackdropFilter(
               filter: ImageFilter.blur(
@@ -38,7 +40,7 @@ class _HomeState extends State<Home> {
                     child: new Container(width: 400.0,height: 400.0,),
                     decoration: new BoxDecoration(
                       borderRadius: new BorderRadius.circular(10.0),
-                      image: new DecorationImage(image: new NetworkImage('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg'),
+                      image: new DecorationImage(image: new NetworkImage(widget.image_link),
                       fit: BoxFit.cover),
                       boxShadow: [
                         new BoxShadow(

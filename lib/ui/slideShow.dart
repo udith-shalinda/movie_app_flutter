@@ -11,12 +11,24 @@ class SlideShow extends StatefulWidget {
 
 class _SlideShowState extends State<SlideShow> {
   int _current = 0;
+  List<Widget> movies = new List();
   final List<String> _listViewData = [
-    "A List View with many Text - Here's one!",
-    "A List View with many Text - Here's another!",
-    "A List View with many Text - Here's more!",
-    "A List View with many Text - Here's more!",
+    "https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg",
+    "https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg",
+    "https://www.openaircinemas.com.au/wp-content/uploads/2019/06/268x0w.png",
+    "https://is3-ssl.mzstatic.com/image/thumb/Video113/v4/6e/47/f6/6e47f680-ac54-21ff-a37a-3aab1a9970b0/DIS_AV_ENDGAME_FINAL_ENGLISH_US_WW_WW_ARTWORK_EN_2000x3000_1OWPBJ00000GQ6.lsr/268x0w.jpg",
   ];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // setState(() {
+      addMovie();
+      addMovie();
+      addMovie();  
+    // });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +98,7 @@ class _SlideShowState extends State<SlideShow> {
                         // shape: BoxShape.circle,
                         borderRadius: new BorderRadius.circular(10.0),
                       ),
-                      child: Image.network('https://yourdubaiguide.com/wp-content/uploads/2019/03/Spider-Man-Far-From-Home-movie-release-date-showtimes-Dubai.jpg',
+                      child: Image.network(i,
                               fit: BoxFit.cover,),         
                       ),
                   );
@@ -110,29 +122,46 @@ class _SlideShowState extends State<SlideShow> {
             height: 270,
             child: GridView.count(
               crossAxisCount: 2,
-              children: List.generate(4, (index) {      //should return widget list
-                return Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Container(
-                      child: Image.network('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg',
-                              fit: BoxFit.fitHeight,
-                              ), 
-                  ),
-                );
-              }),
+              children:movies != null? movies : [
+                testMovie(),
+                testMovie(),
+              ] 
             )
           )
-
         ],
         
       ),
     
     );
   }
-  void selectMovie(String movieId){
+
+  void addMovie(){
+    movies.add(InkWell(
+      child: Container(
+        child:Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.network('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg',
+            fit: BoxFit.fill,
+            ),
+        ),
+        ),
+        onTap: (){
+          selectMovie('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg');
+        },
+      )
+    );
+  }
+  Widget testMovie(){
+    return Container(
+      child:Image.network('https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/05/Deadpool-920x584.jpg',
+        fit: BoxFit.fill,
+        ),
+      );
+  }
+  void selectMovie(String movieLink){
     var router = new MaterialPageRoute(
         builder: (BuildContext context){
-          return new Home();
+          return new Home(image_link: movieLink,);
         });
     Navigator.of(context).push(router);
   }
